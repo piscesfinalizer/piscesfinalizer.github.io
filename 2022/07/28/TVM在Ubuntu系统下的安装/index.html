@@ -23,14 +23,14 @@
 <meta property="og:site_name" content="Forgo&#39;s Blog">
 <meta property="og:description" content="安装过程主要参看官方文档，不过那个文档考虑的方面太多了，容易绕晕。这里考虑在conda环境下安装tvm。 0.服务器环境系统：Linux version 5.4.0-107-generic (buildd@lcy02-amd64-058) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1))cpu：Intel(R) Xeon(R) CPU E5-2">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://piscesfinalizer.github.io/2022-07-28-17-09-05.png">
-<meta property="og:image" content="https://piscesfinalizer.github.io/2022-07-28-17-19-02.png">
-<meta property="og:image" content="https://piscesfinalizer.github.io/2022-07-28-17-24-31.png">
+<meta property="og:image" content="https://piscesfinalizer.github.io/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-09-05.png">
+<meta property="og:image" content="https://piscesfinalizer.github.io/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-19-02.png">
+<meta property="og:image" content="https://piscesfinalizer.github.io/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-24-31.png">
 <meta property="article:published_time" content="2022-07-28T07:42:26.000Z">
 <meta property="article:modified_time" content="2022-07-28T09:25:41.059Z">
 <meta property="article:author" content="PiscesFinalizer">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://piscesfinalizer.github.io/2022-07-28-17-09-05.png">
+<meta name="twitter:image" content="https://piscesfinalizer.github.io/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-09-05.png">
   
   
   
@@ -278,13 +278,13 @@
                 
                 <p>安装过程主要参看<a target="_blank" rel="noopener" href="https://tvm.apache.org/docs/install/from_source.html#developers-get-source-from-github">官方文档</a>，不过那个文档考虑的方面太多了，容易绕晕。这里考虑在conda环境下安装tvm。</p>
 <h4 id="0-服务器环境"><a href="#0-服务器环境" class="headerlink" title="0.服务器环境"></a>0.服务器环境</h4><p>系统：Linux version 5.4.0-107-generic (buildd@lcy02-amd64-058) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1))<br>cpu：Intel(R) Xeon(R) CPU E5-2695 v4 @ 2.10GHz</p>
-<h4 id="1-从GitHub获取源码"><a href="#1-从GitHub获取源码" class="headerlink" title="1.从GitHub获取源码"></a>1.从GitHub获取源码</h4><p><code>git clone --recursive https://github.com/apache/tvm tvm</code>。利用<code>--recursive</code>选项把子模块也进行克隆<br><img src="/2022-07-28-17-09-05.png" srcset="/img/loading.gif" lazyload alt="tvm文件夹内容"></p>
-<h4 id="2-构建Conda环境"><a href="#2-构建Conda环境" class="headerlink" title="2.构建Conda环境"></a>2.构建Conda环境</h4><p>在<code>./tvm/conda/</code>文件夹下有一个<code>build-environment.yaml</code>文件，利用它可以直接构建出安装tvm需要的前置环境。<br><img src="/2022-07-28-17-19-02.png" srcset="/img/loading.gif" lazyload alt="build-environment.yaml"></p>
+<h4 id="1-从GitHub获取源码"><a href="#1-从GitHub获取源码" class="headerlink" title="1.从GitHub获取源码"></a>1.从GitHub获取源码</h4><p><code>git clone --recursive https://github.com/apache/tvm tvm</code>。利用<code>--recursive</code>选项把子模块也进行克隆<br><img src="/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-09-05.png" srcset="/img/loading.gif" lazyload alt="tvm文件夹内容"></p>
+<h4 id="2-构建Conda环境"><a href="#2-构建Conda环境" class="headerlink" title="2.构建Conda环境"></a>2.构建Conda环境</h4><p>在<code>./tvm/conda/</code>文件夹下有一个<code>build-environment.yaml</code>文件，利用它可以直接构建出安装tvm需要的前置环境。<br><img src="/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-19-02.png" srcset="/img/loading.gif" lazyload alt="build-environment.yaml"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">Create a conda environment with the dependencies specified by the yaml</span><br>conda env create --file conda/build-environment.yaml<br><span class="hljs-meta prompt_"># </span><span class="language-bash">Activate the created environment</span><br>conda activate tvm-build<br></code></pre></td></tr></table></figure>
 <p>注意python版本,3.9.X以上版本的python是不被支持的。<br>接着就是在conda环境中安装tvm了。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda build --output-folder=conda/pkg  conda/recipe<br><span class="hljs-meta prompt_"># </span><span class="language-bash">Run conda/build_cuda.sh to build with cuda enabled</span><br>conda install tvm -c ./conda/pkg<br></code></pre></td></tr></table></figure>
 
-<p>正常进行到这里的话，tvm-build环境中已经有tvm了，可以进行测试<br><img src="/2022-07-28-17-24-31.png" srcset="/img/loading.gif" lazyload alt="result"></p>
+<p>正常进行到这里的话，tvm-build环境中已经有tvm了，可以进行测试<br><img src="/2022/07/28/TVM%E5%9C%A8Ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85/2022-07-28-17-24-31.png" srcset="/img/loading.gif" lazyload alt="result"></p>
 <h4 id="3-总结"><a href="#3-总结" class="headerlink" title="3.总结"></a>3.总结</h4><p>利用conda环境来安装tvm还是相对容易的，毕竟conda的包管理确实好，而且tvm也支持直接利用conda来安装。</p>
 
                 
